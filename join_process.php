@@ -16,32 +16,27 @@
 </head>
 
 <body>
-    <?php include 'header.php'; ?>
-    <main>
-        <h1>회원가입</h1>
-        <?php
-        $uid = $_POST['uid'];
-        $upw = $_POST['upw'];
-        $uname = $_POST['uname'];
+    <?php
+    $uid = $_POST['uid'];
+    $upw = $_POST['upw'];
+    $uname = $_POST['uname'];
 
-        $dbcon = mysqli_connect('localhost', 'root', '');
-        mysqli_select_db($dbcon, 'kt');
+    $dbcon = mysqli_connect('localhost', 'root', '');
+    mysqli_select_db($dbcon, 'kt');
 
-        $query = "insert into member values(null, '$uid', '$upw', '$uname')";
-        $result = mysqli_query($dbcon, $query);
+    $query = "insert into member values(null, '$uid', '$upw', '$uname')";
+    $result = mysqli_query($dbcon, $query);
 
-        if ($result) {
-            echo "<script>location.href='mainpage.php';</script>";
-        } else {
-            echo "회원 가입 실패. 관리자에게 문의하세요";
-        }
+    if ($result) {
+        echo "<script>location.href='mainpage.php';</script>";
+    } else {
+        echo '<script>alert("회원 가입 실패. 관리자에게 문의하세요.");
+        window.location.href = "login.php";</script>';
+        exit;
+    }
 
-        mysqli_close($dbcon);
-        ?>
-    </main>
-    <footer>
-        <b>Copyright &copy; 수얼 Co.Ltd. All rights reserved.</b>
-    </footer>
+    mysqli_close($dbcon);
+    ?>
 </body>
 
 </html>

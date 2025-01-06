@@ -16,39 +16,36 @@
 </head>
 
 <body>
-    <?php include 'header.php'; ?>
-    <main>
-        <h1>로그인</h1>
-        <?php
-        session_start();
-        $uid = $_POST['uid'];
-        $upw = $_POST['upw'];
+    <?php
+    session_start();
+    $uid = $_POST['uid'];
+    $upw = $_POST['upw'];
 
-        $dbcon = mysqli_connect('localhost', 'root', '');
-        mysqli_select_db($dbcon, 'kt');
+    $dbcon = mysqli_connect('localhost', 'root', '');
+    mysqli_select_db($dbcon, 'kt');
 
-        $query = "SELECT * FROM member WHERE uid = '$uid'";
-        $result = mysqli_query($dbcon, $query);
+    $query = "SELECT * FROM member WHERE uid = '$uid'";
+    $result = mysqli_query($dbcon, $query);
 
-        $row = mysqli_fetch_array($result);
+    $row = mysqli_fetch_array($result);
 
-        if (isset($row['uid'])) {
-            if ($upw == $row['upw']) {
-                $_SESSION['userid'] = $row['uid'];
-                echo "<script>location.href='mainpage.php';</script>";
-            } else {
-                echo "패스워드 오류";
-            }
+    if (isset($row['uid'])) {
+        if ($upw == $row['upw']) {
+            $_SESSION['userid'] = $row['uid'];
+            echo "<script>location.href='mainpage.php';</script>";
         } else {
-            echo "해당 ID 존재하지 않음";
+            echo '<script>alert("비밀번호가 틀렸습니다.");
+            window.location.href = "login.php";</script>';
+            exit;
         }
+    } else {
+        echo '<script>alert("ID가 존재하지 않습니다.");
+        window.location.href = "login.php";</script>';
+        exit;
+    }
 
-        mysqli_close($dbcon);
-        ?>
-    </main>
-    <footer>
-        <b>Copyright &copy; 수얼 Co.Ltd. All rights reserved.</b>
-    </footer>
+    mysqli_close($dbcon);
+    ?>
 </body>
 
 </html>

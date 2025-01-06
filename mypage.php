@@ -23,10 +23,8 @@
             echo '<h1>마이페이지</h1>';
             echo '<p>환영합니다, ' . htmlspecialchars($_SESSION['userid']) . '님!</p>';
         } else {
-            echo '<script>
-                    alert("로그인 후 이용 가능합니다.");
-                    window.location.href = "login.php";
-                  </script>';
+            echo '<script>alert("로그인 후 이용 가능합니다.");
+            window.location.href = "login.php";</script>';
             exit;
         }
         ?>
