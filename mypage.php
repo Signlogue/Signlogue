@@ -18,7 +18,18 @@
 <body>
     <?php include 'header.php'; ?>
     <main class="page-modern-ui">
-        <h1>마이페이지</h1>
+        <?php
+        if (isset($_SESSION['userid'])) {
+            echo '<h1>마이페이지</h1>';
+            echo '<p>환영합니다, ' . htmlspecialchars($_SESSION['userid']) . '님!</p>';
+        } else {
+            echo '<script>
+                    alert("로그인 후 이용 가능합니다.");
+                    window.location.href = "login.php";
+                  </script>';
+            exit;
+        }
+        ?>
     </main>
     <footer>
         <b>Copyright &copy; 수얼 Co.Ltd. All rights reserved.</b>
