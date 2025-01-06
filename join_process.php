@@ -16,15 +16,7 @@
 </head>
 
 <body>
-    <header>
-        <a href="mainpage.html">
-            <img src="src/logo.png" alt="수얼" class="header-logo">
-        </a>
-        <nav>
-            <a href="join.php" class="nav-link">회원가입</a>
-            <a href="login.php" class="nav-link">로그인</a>
-        </nav>
-    </header>
+    <?php include 'header.php'; ?>
     <main>
         <h1>회원가입</h1>
         <?php
