@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Keith Entertainment">
-    <title>회원 가입 페이지</title>
+    <title>회원가입</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard.css">
     <link rel="stylesheet" href="styles.css">
     <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
@@ -26,7 +26,7 @@
         </nav>
     </header>
     <main>
-        <h1>회원 가입</h1>
+        <h1>회원가입</h1>
         <?php
         $uid = $_POST['uid'];
         $upw = $_POST['upw'];
