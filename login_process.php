@@ -43,7 +43,7 @@
         if (isset($row['uid'])) {
             if ($upw == $row['upw']) {
                 $SESSION['userid'] = $row['uid'];
-                echo $SESSION['userid'] . "님 반갑습니다";
+                echo "<script>location.href='mainpage.html';</script>";
             } else {
                 echo "패스워드 오류";
             }

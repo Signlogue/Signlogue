@@ -39,7 +39,7 @@
         $result = mysqli_query($dbcon, $query);
 
         if ($result) {
-            echo "환영합니다 $uid 님, 회원 가입이 완료되었습니다";
+            echo "<script>location.href='mainpage.html';</script>";
         } else {
             echo "회원 가입 실패. 관리자에게 문의하세요";
         }
