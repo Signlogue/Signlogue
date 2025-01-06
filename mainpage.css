@@ -98,7 +98,7 @@ footer {
     height: calc(100vh - 140px);
 }
 
-.page-modern-ui .signup-form {
+.page-modern-ui .form {
     background-color: #ffffff;
     padding: 30px;
     border-radius: 10px;
@@ -108,15 +108,15 @@ footer {
     text-align: center;
 }
 
-.page-modern-ui .signup-form h1 {
+.page-modern-ui .form h1 {
     font-size: 1.8em;
     font-weight: 600;
     color: #333333;
     margin-bottom: 20px;
 }
 
-.page-modern-ui .signup-form input[type="text"],
-.page-modern-ui .signup-form input[type="password"] {
+.page-modern-ui .form input[type="text"],
+.page-modern-ui .form input[type="password"] {
     width: 100%;
     padding: 10px;
     margin-bottom: 15px;
@@ -126,7 +126,7 @@ footer {
     box-sizing: border-box;
 }
 
-.page-modern-ui .signup-form input[type="submit"] {
+.page-modern-ui .form input[type="submit"] {
     width: 100%;
     padding: 10px;
     background-color: #4caf50;
@@ -138,16 +138,16 @@ footer {
     transition: background-color 0.3s ease;
 }
 
-.page-modern-ui .signup-form input[type="submit"]:hover {
+.page-modern-ui .form input[type="submit"]:hover {
     background-color: #45a049;
 }
 
 @media screen and (max-width: 768px) {
-    .page-modern-ui .signup-form {
+    .page-modern-ui .form {
         padding: 20px;
     }
 
-    .page-modern-ui .signup-form h1 {
+    .page-modern-ui .form h1 {
         font-size: 1.5em;
     }
 }

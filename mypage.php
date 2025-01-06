@@ -13,6 +13,7 @@
     <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
     <meta name="theme-color" content="#ffffff">
     <script defer src="script.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@9"></script>
 </head>
 
 <body>
@@ -20,11 +21,27 @@
     <main class="page-modern-ui">
         <?php
         if (isset($_SESSION['userid'])) {
-            echo '<h1>마이페이지</h1>';
-            echo '<p>환영합니다, ' . htmlspecialchars($_SESSION['userid']) . '님!</p>';
+            echo '
+            <div class="form">
+                <h1>정보 수정</h1>
+                <form action="./mypage_process.php" method="POST">
+                    <input type="password" name="upw" placeholder="비밀번호" required><br>
+                    <input type="text" name="uname" placeholder="이름" required><br><br>
+                    <input type="submit" value="수정">
+                </form>
+            </div>';
         } else {
-            echo '<script>alert("로그인 후 이용 가능합니다.");
-            window.location.href = "login.php";</script>';
+            echo '
+            <script>
+                Swal.fire({
+                    icon: "error",
+                    title: "로그인 후 이용 가능합니다.",
+                }).then( (result) => {   
+                    if (result.isConfirmed) {
+                        window.location.href = "login.php";
+                    }
+                })
+            </script>';
             exit;
         }
         ?>

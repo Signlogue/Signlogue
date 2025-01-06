@@ -13,6 +13,7 @@
     <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
     <meta name="theme-color" content="#ffffff">
     <script defer src="script.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@9"></script>
 </head>
 
 <body>
@@ -30,8 +31,18 @@
     if ($result) {
         echo "<script>location.href='mainpage.php';</script>";
     } else {
-        echo '<script>alert("회원 가입 실패. 관리자에게 문의하세요.");
-        window.location.href = "login.php";</script>';
+        echo '
+        <script>
+            Swal.fire({
+                icon: "error",
+                title: "회원 가입 실패",
+                text: "관리자에게 문의하세요."
+            }).then( (result) => {   
+                if (result.isConfirmed) {
+                    window.location.href = "login.php";
+                }
+            })
+        </script>';
         exit;
     }
 

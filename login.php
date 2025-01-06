@@ -18,7 +18,7 @@
 <body>
     <?php include 'header.php'; ?>
     <main class="page-modern-ui">
-        <div class="signup-form">
+        <div class="form">
             <h1>로그인</h1>
             <form action='./login_process.php' method='POST'>
                 <input type='text' name='uid' placeholder="ID" required><br>
