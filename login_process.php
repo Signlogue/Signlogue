@@ -35,7 +35,7 @@
         if (isset($row['uid'])) {
             if ($upw == $row['upw']) {
                 $_SESSION['userid'] = $row['uid'];
-                echo "<script>location.href='mainpage.html';</script>";
+                echo "<script>location.href='mainpage.php';</script>";
             } else {
                 echo "패스워드 오류";
             }

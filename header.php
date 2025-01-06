@@ -2,7 +2,7 @@
 session_start();
 ?>
 <header>
-    <a href="mainpage.html">
+    <a href="mainpage.php">
         <img src="src/logo.png" alt="수얼" class="header-logo">
     </a>
     <nav>

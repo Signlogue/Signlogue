@@ -31,7 +31,7 @@
         $result = mysqli_query($dbcon, $query);
 
         if ($result) {
-            echo "<script>location.href='mainpage.html';</script>";
+            echo "<script>location.href='mainpage.php';</script>";
         } else {
             echo "회원 가입 실패. 관리자에게 문의하세요";
         }
