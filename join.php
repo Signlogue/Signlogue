@@ -25,14 +25,16 @@
             <a href="login.php" class="nav-link">로그인</a>
         </nav>
     </header>
-    <main>
-        <h1>회원 가입</h1>
-        <form action='./join_process.php' method='POST'>
-            <input type='text' name='uid' placeholder="ID" required><br>
-            <input type='password' name='upw' placeholder="비밀번호" required><br>
-            <input type='text' name='uname' placeholder="이름" required><br><br>
-            <input type='submit' value='회원가입'>
-        </form>
+    <main class="page-modern-ui">
+        <div class="signup-form">
+            <h1>회원 가입</h1>
+            <form action='./join_process.php' method='POST'>
+                <input type='text' name='uid' placeholder="ID" required><br>
+                <input type='password' name='upw' placeholder="비밀번호" required><br>
+                <input type='text' name='uname' placeholder="이름" required><br><br>
+                <input type='submit' value='회원가입'>
+            </form>
+        </div>
     </main>
     <footer>
         <b>Copyright &copy; 수얼 Co.Ltd. All rights reserved.</b>

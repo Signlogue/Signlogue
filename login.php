@@ -25,13 +25,15 @@
             <a href="login.php" class="nav-link">로그인</a>
         </nav>
     </header>
-    <main>
-        <h1>로그인</h1>
-        <form action='./login_process.php' method='POST'>
-            <input type='text' name='uid' placeholder="ID" required><br>
-            <input type='password' name='upw' placeholder="비밀번호" required><br><br>
-            <input type='submit' value='로그인'>
-        </form>
+    <main class="page-modern-ui">
+        <div class="signup-form">
+            <h1>로그인</h1>
+            <form action='./login_process.php' method='POST'>
+                <input type='text' name='uid' placeholder="ID" required><br>
+                <input type='password' name='upw' placeholder="비밀번호" required><br><br>
+                <input type='submit' value='로그인'>
+            </form>
+        </div>
     </main>
     <footer>
         <b>Copyright &copy; 수얼 Co.Ltd. All rights reserved.</b>
