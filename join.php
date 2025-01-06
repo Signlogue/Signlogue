@@ -17,7 +17,7 @@
 
 <body>
     <header>
-        <a href="index.html">
+        <a href="mainpage.html">
             <img src="src/logo.png" alt="수얼" class="header-logo">
         </a>
         <nav>
