@@ -1,55 +1,50 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>의생활</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
 
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="learn.css">
 
 </head>
+
 <body>
-    <header>
-        <a href="index.html">
-            <img src="src/logo.png" alt="수얼" class="header-logo">
-        </a>
-        <nav>
-            <a href="join.html" class="nav-link">회원가입</a>
-            <a href="login.html" class="nav-link">로그인</a>
-        </nav>
-    </header>
+    <?php include 'header.php'; ?>
 
     <main>
 
-    <div id="carouselExample" class="carousel slide content_container">
-        <div class="carousel-inner">
-            <?php
-                $used=[];
-                for($i = 61; $i<81; $i++ ){
-                    $used[$i]=false;
+        <div id="carouselExample" class="carousel slide content_container">
+            <div class="carousel-inner">
+                <?php
+                $used = [];
+                for ($i = 61; $i < 81; $i++) {
+                    $used[$i] = false;
                 }
 
 
-                for($i = 0; $i<20; $i++ ){
+                for ($i = 0; $i < 20; $i++) {
 
-                    do{
-                        $rnd = rand(61, 80);  
-                    }while($used[$rnd] == true); // 해당 숫자가 이미 사용되었는지 확인
+                    do {
+                        $rnd = rand(61, 80);
+                    } while ($used[$rnd] == true); // 해당 숫자가 이미 사용되었는지 확인
                     $used[$rnd] = true;  // 사용된 숫자 표시
-
+                
                     $dbcon = mysqli_connect('localhost', 'root', '');
                     mysqli_select_db($dbcon, 'sign');
-                
+
                     $query1 = "select * from sign where num = '$rnd'";
                     $result1 = mysqli_query($dbcon, $query1);
-        
+
                     $row = mysqli_fetch_array($result1);
-                    
-                    $isActive = $i  === 0 ? 'active' : '';
-                    
-                    if($rnd == 63 || $rnd == 68 || $rnd == 71 || $rnd == 72 || $rnd == 73){
+
+                    $isActive = $i === 0 ? 'active' : '';
+
+                    if ($rnd == 63 || $rnd == 68 || $rnd == 71 || $rnd == 72 || $rnd == 73) {
                         echo "
                         <div class='carousel-item $isActive'>
                             <h2>" . ($i + 1) . "/20</h2>
@@ -62,7 +57,7 @@
                                 <p class='sign_explain'>{$row['explanation']}</p>
                             </div>
                         </div>";
-                    }else{
+                    } else {
                         echo "
                         <div class='carousel-item $isActive'>
                             <h2>" . ($i + 1) . "/20</h2>
@@ -73,35 +68,38 @@
                             </div>
                         </div>";
                     }
-                    
+
                 }
 
 
-            ?>
-            
+                ?>
+
+            </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <img src="../img/arrow-pre.png" class="arrow_img">
+
+                <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#carouselExample" data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <img src="../img/arrow-next.png" class="arrow_img">
+
+                <span class="visually-hidden">Next</span>
+            </button>
         </div>
-        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
-            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-            <img src="../img/arrow-pre.png" class="arrow_img">
 
-            <span class="visually-hidden">Previous</span>
-        </button>
-        <button class="carousel-control-next" type="button" data-bs-target="#carouselExample" data-bs-slide="next">
-            <span class="carousel-control-next-icon" aria-hidden="true"></span>
-            <img src="../img/arrow-next.png" class="arrow_img">
 
-            <span class="visually-hidden">Next</span>
-        </button>
-    </div>
-
-     
     </main>
 
     <footer>
         <b>Copyright &copy; 수얼 Co.Ltd. All rights reserved.</b>
     </footer>
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+        crossorigin="anonymous"></script>
 
 </body>
+
 </html>

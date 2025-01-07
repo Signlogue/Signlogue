@@ -4,6 +4,7 @@ $score = isset($_GET['score']) ? $_GET['score'] : 0;
 
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -14,16 +15,9 @@ $score = isset($_GET['score']) ? $_GET['score'] : 0;
 
 
 </head>
+
 <body>
-    <header>
-        <a href="index.html">
-            <img src="src/logo.png" alt="수얼" class="header-logo">
-        </a>
-        <nav>
-            <a href="join.html" class="nav-link">회원가입</a>
-            <a href="login.html" class="nav-link">로그인</a>
-        </nav>
-    </header>
+    <?php include 'header.php'; ?>
 
     <main>
         <div class="result_container text-center">
@@ -38,4 +32,5 @@ $score = isset($_GET['score']) ? $_GET['score'] : 0;
     </footer>
 
 </body>
+
 </html>
