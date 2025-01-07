@@ -18,7 +18,7 @@
       <div class="testbox">
         <div class="testcard-1">
           <div class="card" style="width: 18rem">
-            <img src="./img/169.jpg" class="card-img-top" alt="..." />
+            <img src="./img/169.jpg" class="card-img-top img_sign" alt="..." />
             <div class="card-body">
               <h5 class="card-title">인간 관련 수어 맞추기</h5>
               <p class="card-text">
@@ -32,7 +32,7 @@
 
         <div class="testcard-2">
           <div class="card" style="width: 18rem">
-            <img src="./img/169.jpg" class="card-img-top" alt="..." />
+            <img src="./sign/21.jpg" class="card-img-top img_sign" alt="..." />
             <div class="card-body">
               <h5 class="card-title">삶 관련 수어 맞추기</h5>
               <p class="card-text">
@@ -48,7 +48,7 @@
       <div class="testbox">
         <div class="testbox-3">
           <div class="card" style="width: 18rem">
-            <img src="./img/169.jpg" class="card-img-top" alt="..." />
+            <img src="./sign/41.jpg" class="card-img-top img_sign" alt="..." />
             <div class="card-body">
               <h5 class="card-title">식생활 관련 수어 맞추기</h5>
               <p class="card-text">
@@ -62,7 +62,7 @@
 
         <div class="testbox-4">
           <div class="card" style="width: 18rem">
-            <img src="./img/169.jpg" class="card-img-top" alt="..." />
+            <img src="./sign/61.jpg" class="card-img-top img_sign" alt="..." />
             <div class="card-body">
               <h5 class="card-title">의생활 관련 수어 맞추기</h5>
               <p class="card-text">

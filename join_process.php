@@ -23,7 +23,7 @@
     $uname = $_POST['uname'];
 
     $dbcon = mysqli_connect('localhost', 'root', '');
-    mysqli_select_db($dbcon, 'kt');
+    mysqli_select_db($dbcon, 'sign');
 
     $query = "insert into member values(null, '$uid', '$upw', '$uname')";
     $result = mysqli_query($dbcon, $query);

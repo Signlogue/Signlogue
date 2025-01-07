@@ -23,7 +23,7 @@
     $upw = $_POST['upw'];
 
     $dbcon = mysqli_connect('localhost', 'root', '');
-    mysqli_select_db($dbcon, 'kt');
+    mysqli_select_db($dbcon, 'sign');
 
     $query = "SELECT * FROM member WHERE uid = '$uid'";
     $result = mysqli_query($dbcon, $query);

@@ -25,7 +25,7 @@
     $uname = $_POST['uname'];
 
     $dbcon = mysqli_connect('localhost', 'root', '');
-    mysqli_select_db($dbcon, 'kt');
+    mysqli_select_db($dbcon, 'sign');
 
     $query = "update member set upw='$upw', uname='$uname' where uid='$uid'";
     $result = mysqli_query($dbcon, $query);
