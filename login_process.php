@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="수얼">
+    <meta name="description" content="Keith Entertainment">
     <title>로그인</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard.css">
     <link rel="stylesheet" href="styles.css">
@@ -33,7 +33,18 @@
     if (isset($row['uid'])) {
         if ($upw == $row['upw']) {
             $_SESSION['userid'] = $row['uid'];
-            echo "<script>location.href='mainpage.php';</script>";
+            echo '
+            <script>
+                Swal.fire({
+                    icon: "success",
+                    title: "로그인 되었습니다.",
+                }).then( (result) => {   
+                    if (result.isConfirmed) {
+                        window.location.href = "mainpage.php";
+                    }
+                })
+            </script>';
+            // echo "<script>location.href='mainpage.php';</script>";
         } else {
             echo '
             <script>

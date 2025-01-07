@@ -119,3 +119,7 @@ footer {
   gap: 200px;
   margin-bottom: 100px;
 }
+
+.card-body {
+  text-align: center;
+}
