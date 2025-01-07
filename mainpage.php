@@ -24,7 +24,8 @@
             <p class="card-text">
               한국수어 사전에 기재된 인간 관련 일상생활 수어 20문제입니다.
             </p>
-            <a href="#" class="btn btn-primary">문제 풀러가기</a>
+            <a href="./people.php" class="btn btn-success">공부하기</a>
+            <a href="./quiz_people.php" class="btn btn-primary">문제 풀러가기</a>
           </div>
         </div>
       </div>
@@ -37,7 +38,8 @@
             <p class="card-text">
               한국수어 사전에 기재된 삶 관련 일상생활 수어 20문제입니다.
             </p>
-            <a href="#" class="btn btn-primary">문제 풀러가기</a>
+            <a href="./life.php" class="btn btn-success">공부하기</a>
+            <a href="./quiz_life.php" class="btn btn-primary">문제 풀러가기</a>
           </div>
         </div>
       </div>
@@ -52,7 +54,8 @@
             <p class="card-text">
               한국수어 사전에 기재된 식생활 관련 일상생활 수어 20문제입니다.
             </p>
-            <a href="#" class="btn btn-primary">문제 풀러가기</a>
+            <a href="./foodLife.php" class="btn btn-success">공부하기</a>
+            <a href="./quiz_food.php" class="btn btn-primary">문제 풀러가기</a>
           </div>
         </div>
       </div>
@@ -65,7 +68,8 @@
             <p class="card-text">
               한국수어 사전에 기재된 의생활 관련 일상생활 수어 20문제입니다.
             </p>
-            <a href="#" class="btn btn-primary">문제 풀러가기</a>
+            <a href="./clothingLife.php" class="btn btn-success">공부하기</a>
+            <a href="./quiz_clothing.php" class="btn btn-primary">문제 풀러가기</a>
           </div>
         </div>
       </div>
