@@ -27,7 +27,13 @@ header .header-logo {
     height: 30px;
 }
 
+nav{
+    display: flex !important;
+
+}
+
 header nav .nav-link {
+    display: flex;
     font-size: 1.1em;
     color: #333333;
     text-decoration: none;

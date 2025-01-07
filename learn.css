@@ -14,7 +14,7 @@
 
 .carousel-inner{
     border-radius: 10px;
-
+    width: 700px;
 }
 .img_sign{
     width: 400px;
@@ -26,7 +26,7 @@
     text-align: center;
     background-color: white;
     border-radius: 10px;
-
+    height: 650px;
 
 }
 
