@@ -1,0 +1,46 @@
+
+
+.content_container{
+    margin: auto;
+
+}
+
+.img_container{
+    width: 400px;
+    height: 400px;
+    margin: auto;
+
+}
+
+.carousel-inner{
+    border-radius: 10px;
+
+}
+.img_sign{
+    width: 400px;
+    height: 400px;
+
+}
+
+.carousel-item{
+    text-align: center;
+    background-color: white;
+    border-radius: 10px;
+
+
+}
+
+.carousel-caption{
+    position: static !important;
+}
+
+.sign_explain{
+    padding: 20px;
+}
+
+.arrow_img{
+    position: fixed;
+    top: 50%;
+    z-index: 10;
+    
+}
