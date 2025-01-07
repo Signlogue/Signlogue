@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Keith Entertainment">
+    <meta name="description" content="수얼">
     <title>회원가입</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard.css">
     <link rel="stylesheet" href="styles.css">
@@ -29,13 +29,24 @@
     $result = mysqli_query($dbcon, $query);
 
     if ($result) {
-        echo "<script>location.href='mainpage.php';</script>";
+        echo '
+        <script>
+            Swal.fire({
+                icon: "success",
+                title: "회원 가입에 성공하였습니다.",
+                text: "로그인 후 페이지의 각종 기능을 이용해 주세요."
+            }).then( (result) => {   
+                if (result.isConfirmed) {
+                    window.location.href = "mainpage.php";
+                }
+            })
+        </script>';
     } else {
         echo '
         <script>
             Swal.fire({
                 icon: "error",
-                title: "회원 가입 실패",
+                title: "회원 가입에 실패하였습니다.",
                 text: "관리자에게 문의하세요."
             }).then( (result) => {   
                 if (result.isConfirmed) {

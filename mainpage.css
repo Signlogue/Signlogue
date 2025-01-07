@@ -1,19 +1,43 @@
+<<<<<<< HEAD
 /* 전체 배경 설정 */
+=======
+>>>>>>> mypage-develop
 html,
 body {
   height: 100%;
   margin: 0;
   padding: 0;
   overflow-x: hidden;
+<<<<<<< HEAD
+=======
+  font-family: "Pretendard", Arial, sans-serif !important;
+>>>>>>> mypage-develop
 }
 
 body {
   background-color: #f0f0f0 !important;
+<<<<<<< HEAD
   font-family: "Pretendard", Arial, sans-serif;
+=======
+>>>>>>> mypage-develop
   display: flex;
   flex-direction: column;
   min-height: 100vh;
   overflow-y: auto;
+<<<<<<< HEAD
+=======
+}
+
+.container,
+.row,
+.col,
+.btn,
+.nav-link,
+.card,
+.table,
+.form-control {
+  font-family: "Pretendard", Arial, sans-serif !important;
+>>>>>>> mypage-develop
 }
 
 /* 로딩스크린 스타일 */
@@ -61,7 +85,11 @@ header {
   display: flex;
   align-items: center;
   justify-content: space-between;
+<<<<<<< HEAD
   padding: 10px 30px;
+=======
+  padding: 20px 30px;
+>>>>>>> mypage-develop
   background-color: #ffffff;
   flex-shrink: 0;
 }
@@ -76,9 +104,21 @@ header nav {
 }
 header .header-logo {
   height: 30px;
+<<<<<<< HEAD
 }
 
 header nav .nav-link {
+=======
+}
+
+nav {
+  display: flex !important;
+
+}
+
+header nav .nav-link {
+  display: flex;
+>>>>>>> mypage-develop
   font-size: 1.1em;
   color: #333333;
   text-decoration: none;
@@ -103,8 +143,18 @@ main {
   padding-top: 10px;
 }
 
+<<<<<<< HEAD
 header + main {
   margin-top: calc(20px + 60px);
+=======
+main h1,
+main h2,
+main h3,
+main p {
+  margin: 0 0 15px 0;
+  color: #333333;
+  line-height: 1.6;
+>>>>>>> mypage-develop
 }
 
 .testbox {
@@ -147,6 +197,18 @@ footer {
   }
 }
 
+<<<<<<< HEAD
 .img_sign{
   height: 250px;
+=======
+.img_sign {
+  height: 250px;
+}
+
+.testbox {
+  display: flex;
+  flex-direction: row;
+  gap: 200px;
+  margin-bottom: 100px;
+>>>>>>> mypage-develop
 }
