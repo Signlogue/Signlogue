@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Keith Entertainment">
+    <meta name="description" content="수얼">
     <title>정보 수정</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard.css">
     <link rel="stylesheet" href="styles.css">
@@ -25,7 +25,7 @@
     $uname = $_POST['uname'];
 
     $dbcon = mysqli_connect('localhost', 'root', '');
-    mysqli_select_db($dbcon, 'kt');
+    mysqli_select_db($dbcon, 'sign');
 
     $query = "update member set upw='$upw', uname='$uname' where uid='$uid'";
     $result = mysqli_query($dbcon, $query);
