@@ -3,7 +3,8 @@ session_start();
 ?>
 <header>
     <a href="mainpage.php">
-        <img src="src/logo.png" alt="수얼" class="header-logo">
+        <img src="../sign/logo.png" alt="수얼" class="header-logo">
+        <img src="../sign/logo2.png" alt="수얼" class="header-logo">
     </a>
     <nav>
         <?php if (isset($_SESSION['userid'])): ?>
