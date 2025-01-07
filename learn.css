@@ -1,41 +1,46 @@
 
+
 .content_container{
-    width: 500px;
-    text-align: center;
     margin: auto;
-    background-color: white;
-    border-radius: 5px;
+
+}
+
+.img_container{
+    width: 400px;
+    height: 400px;
+    margin: auto;
+
+}
+
+.carousel-inner{
+    border-radius: 10px;
+
 }
 .img_sign{
-    width: 300px;
+    width: 400px;
+    height: 400px;
 
 }
 
-.answer_container{
-    background-color: skyblue;
-    height: 50px;
-    border-radius: 5px;
-}
-
-.answer{
-    display: none;
-}
-
-
-.arrow_next{
-    position: absolute;
-    top:50%;
-    right: 5%;
+.carousel-item{
+    text-align: center;
     background-color: white;
-    border-radius: 50%;
+    border-radius: 10px;
+
 
 }
 
+.carousel-caption{
+    position: static !important;
+}
 
-.arrow_pre{
-    position: absolute;
-    top:50%;
-    left: 5%;
-    background-color: white;
-    border-radius: 50%;
+.sign_explain{
+    padding: 20px;
+}
+
+.arrow_img{
+    position: fixed;
+    top: 50%;
+    z-index: 10;
+    
 }

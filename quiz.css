@@ -1,0 +1,37 @@
+.content_container{
+    background-color: white;
+    padding: 20px;
+}
+
+
+
+.img_container{
+    width: 300px;
+    margin: auto;
+    margin-bottom: 20px;
+
+}
+
+.img_sign{
+    width: 300px;
+}
+
+.choice_container{
+    border-radius: 20px;
+    border: 1px solid black;
+    padding: 20px;
+    text-align: center;
+    margin: 20px;
+    cursor: pointer;
+}
+.choice{
+    margin: 0px;
+}
+
+.result_container{
+    margin: auto;
+}
+
+.question_number{
+    text-align: center;
+}
