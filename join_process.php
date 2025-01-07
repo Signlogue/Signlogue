@@ -28,7 +28,6 @@
     $query = "insert into member values(null, '$uid', '$upw', '$uname')";
     $result = mysqli_query($dbcon, $query);
 
-<<<<<<< HEAD
     if ($result) {
         echo "<script>location.href='mainpage.php';</script>";
     } else {
@@ -46,13 +45,6 @@
         </script>';
         exit;
     }
-=======
-        if ($result) {
-            echo "<script>location.href='mainpage.html';</script>";
-        } else {
-            echo "회원 가입 실패. 관리자에게 문의하세요";
-        }
->>>>>>> sign-develop
 
     mysqli_close($dbcon);
     ?>
