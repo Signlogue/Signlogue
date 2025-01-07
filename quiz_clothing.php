@@ -49,7 +49,7 @@
 
                 $row = mysqli_fetch_array($result1);
 
-                $answer = $row['explanation']; // 정답
+                $answer = $row['answer']; // 정답
                 $choices = [$answer];
                 // 랜덤으로 중복없이 3개 뽑아서 $answer이랑 합쳐서 배열 만들고 
                 // 그 배열에서 랜덤으로 뽑아서 선택 생성
@@ -63,7 +63,7 @@
                     $result2 = mysqli_query($dbcon, $query2);
 
                     $row = mysqli_fetch_array($result2);
-                    $unanswer = $row['explanation'];
+                    $unanswer = $row['answer'];
 
                     array_push($choices, $unanswer);
                 }
@@ -82,7 +82,7 @@
 
                 } else {
                     echo "
-                    <h2 class='question_number'>$qNum/20</h2>
+                    <h2 class='question_number'>" . ($qNum + 1) . "/10</h2>
                     <div class='img_container'>
                         <img src='../sign/$rnd.jpg' class='img_sign' alt='수어 이미지'>
                     </div>";
@@ -148,7 +148,7 @@
 
             if (answer == choiceValue) {
                 element.style.border = "3px solid #BDFF12";
-                lifeScore++;
+                clothesScore++;
                 // 점수 업데이트 후 로컬스토리지에 저장
                 localStorage.setItem('clothesScore', clothesScore);
 

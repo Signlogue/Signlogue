@@ -41,8 +41,21 @@
 
 .result_container{
     margin: auto;
+    background-color: white;
+    padding: 20px;
+    border-radius:20px;
+    width: 700px;
 }
 
 .question_number{
     text-align: center;
+}
+
+.title{
+    margin: auto;
+
+}
+
+.myScore{
+    color: red;
 }

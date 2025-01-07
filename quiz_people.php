@@ -49,7 +49,7 @@
 
                 $row = mysqli_fetch_array($result1);
 
-                $answer = $row['explanation']; // 정답
+                $answer = $row['answer']; // 정답
                 $choices = [$answer];
                 // 랜덤으로 중복없이 3개 뽑아서 $answer이랑 합쳐서 배열 만들고 
                 // 그 배열에서 랜덤으로 뽑아서 선택 생성
@@ -63,7 +63,7 @@
                     $result2 = mysqli_query($dbcon, $query2);
 
                     $row = mysqli_fetch_array($result2);
-                    $unanswer = $row['explanation'];
+                    $unanswer = $row['answer'];
 
                     array_push($choices, $unanswer);
                 }

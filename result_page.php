@@ -1,5 +1,13 @@
 <?php
 $score = isset($_GET['score']) ? $_GET['score'] : 0;
+
+$dbcon = mysqli_connect('localhost', 'root', '');
+mysqli_select_db($dbcon, 'sign');
+
+$query1 = "insert into ranking values(null, $score)";
+mysqli_query($dbcon, $query1);
+
+mysqli_close($dbcon);
 ?>
 
 <!DOCTYPE html>
@@ -20,10 +28,39 @@ $score = isset($_GET['score']) ? $_GET['score'] : 0;
     <?php include 'header.php'; ?>
 
     <main>
+        <h1 class='title'>퀴즈 결과</h1>
         <div class="result_container text-center">
-            <h1>퀴즈 결과</h1>
-            <p>최종 점수: <b><?php echo $score; ?></b>점</p>
-            <a href="index.html" class="btn btn-primary">홈으로 돌아가기</a>
+            
+            <p class='myScore'>내 점수: <b><?php echo $score; ?></b>점</p>
+
+            <div>
+                <h2>전체 랭킹</h2>
+                <?php  
+                    
+                    $dbcon = mysqli_connect('localhost', 'root', '');
+                    mysqli_select_db($dbcon, 'sign');
+                
+                    $query2 = "select score from ranking order by score desc limit 10";
+                
+                    $result = mysqli_query($dbcon, $query2);
+                
+                    $i = 1;
+                    while ($row = mysqli_fetch_array($result)) {
+                        
+                        echo "
+                            <div>
+                                <h3>{$i}위 ".$row['score']."</h3>
+                            </div>
+                        ";
+                        $i++;
+                    }
+                
+                
+                    mysqli_close($dbcon);
+                ?>
+            </div>
+
+            <a href="mainpage.php" class="btn btn-primary">홈으로 돌아가기</a>
         </div>
     </main>
 
@@ -34,3 +71,4 @@ $score = isset($_GET['score']) ? $_GET['score'] : 0;
 </body>
 
 </html>
+
