@@ -46,7 +46,7 @@
                 
                     $i = 1;
                     while ($row = mysqli_fetch_array($result)) {
-                        if(isset($_SESSION['userid'])){
+                        if($row['uid']){
                             echo "
                             <div>
                                 <h3>{$i}위 ". $row['uid']." ".$row['score']."점</h3>
