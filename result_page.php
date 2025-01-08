@@ -1,9 +1,6 @@
-<?php
-$score = isset($_GET['score']) ? $_GET['score'] : 0;
-?>
-
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -14,22 +11,54 @@ $score = isset($_GET['score']) ? $_GET['score'] : 0;
 
 
 </head>
+
 <body>
-    <header>
-        <a href="index.html">
-            <img src="src/logo.png" alt="수얼" class="header-logo">
-        </a>
-        <nav>
-            <a href="join.html" class="nav-link">회원가입</a>
-            <a href="login.html" class="nav-link">로그인</a>
-        </nav>
-    </header>
+    <?php include 'header.php'; ?>
 
     <main>
+        <h1 class='title'>퀴즈 결과</h1>
         <div class="result_container text-center">
-            <h1>퀴즈 결과</h1>
-            <p>최종 점수: <b><?php echo $score; ?></b>점</p>
-            <a href="index.html" class="btn btn-primary">홈으로 돌아가기</a>
+
+            <h3 class='myScore'>내 점수: <b>
+                    <?php
+                    $score = isset($_GET['score']) ? $_GET['score'] : 0;
+                    echo $score;
+                    ?></b>점</h3>
+
+            <div>
+                <h2>전체 랭킹</h2>
+                <?php
+
+                if (isset($_SESSION['userid'])) {
+                    $uid = $_SESSION['userid'];
+                }
+
+                $$dbcon = mysqli_connect('localhost', 'ketose', 'q2w3e4r!');
+                mysqli_select_db($dbcon, 'ketose');
+
+                $query1 = "insert into ranking values(null, '$uid', '$score')";
+                mysqli_query($dbcon, $query1);
+
+                $query2 = "select * from ranking order by score desc limit 10";
+                $result = mysqli_query($dbcon, $query2);
+
+                $i = 1;
+                while ($row = mysqli_fetch_array($result)) {
+
+                    echo "
+                            <div>
+                                <h3>{$i}위 " . $row['uid'] . " " . $row['score'] . "점</h3>
+                            </div>
+                        ";
+                    $i++;
+                }
+
+
+                mysqli_close($dbcon);
+                ?>
+            </div>
+
+            <a href="mainpage.php" class="btn btn-primary">홈으로 돌아가기</a>
         </div>
     </main>
 
@@ -38,4 +67,5 @@ $score = isset($_GET['score']) ? $_GET['score'] : 0;
     </footer>
 
 </body>
+
 </html>
