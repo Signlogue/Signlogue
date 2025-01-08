@@ -28,9 +28,8 @@
             </form>
         </div>
     </main>
-    <footer>
-        <b>Copyright &copy; 수얼 Co.Ltd. All rights reserved.</b>
-    </footer>
+    <?php include 'footer.php'; ?>
+
 </body>
 
 </html>
