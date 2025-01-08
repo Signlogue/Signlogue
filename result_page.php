@@ -29,14 +29,16 @@
                 <h2>전체 랭킹</h2>
                 <?php  
 
-                    if(isset($_SESSION['userid'])){
-                        $uid = $_SESSION['userid'];
-                    }
-
                     $dbcon = mysqli_connect('localhost', 'root', '');
                     mysqli_select_db($dbcon, 'sign');
+                    
+                    if(isset($_SESSION['userid'])){
+                        $uid = $_SESSION['userid'];
+                        $query1 = "insert into ranking values(null, '$uid', '$score')";
+                    }else{
+                        $query1 = "insert into ranking values(null, null, '$score')";
+                    }
 
-                    $query1 = "insert into ranking values(null, '$uid', '$score')";
                     mysqli_query($dbcon, $query1);
                 
                     $query2 = "select * from ranking order by score desc limit 10";
@@ -44,12 +46,20 @@
                 
                     $i = 1;
                     while ($row = mysqli_fetch_array($result)) {
-                        
-                        echo "
+                        if(isset($_SESSION['userid'])){
+                            echo "
                             <div>
                                 <h3>{$i}위 ". $row['uid']." ".$row['score']."점</h3>
                             </div>
                         ";
+                        }else{
+                            echo "
+                            <div>
+                                <h3>{$i}위 비회원 ".$row['score']."점</h3>
+                            </div>
+                        ";
+                        }
+                        
                         $i++;
                     }
                 
