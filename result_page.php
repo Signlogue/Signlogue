@@ -1,20 +1,3 @@
-<!-- <?php
-
-if(isset($_SESSION['userid'])){
-    $uid = $_SESSION['userid'];
-    echo "$uid";
-}
-$score = isset($_GET['score']) ? $_GET['score'] : 0;
-
-$dbcon = mysqli_connect('localhost', 'root', '');
-mysqli_select_db($dbcon, 'sign');
-
-$query1 = "insert into ranking values(null, '$uid', '$score')";
-mysqli_query($dbcon, $query1);
-
-mysqli_close($dbcon);
-?> -->
-
 <!DOCTYPE html>
 <html lang="en">
 
@@ -36,7 +19,11 @@ mysqli_close($dbcon);
         <h1 class='title'>퀴즈 결과</h1>
         <div class="result_container text-center">
             
-            <h3 class='myScore'>내 점수: <b><?php echo $score; ?></b>점</h3>
+            <h3 class='myScore'>내 점수: <b>
+                <?php                     
+                $score = isset($_GET['score']) ? $_GET['score'] : 0;
+                echo $score; 
+                ?></b>점</h3>
 
             <div>
                 <h2>전체 랭킹</h2>
@@ -45,7 +32,6 @@ mysqli_close($dbcon);
                     if(isset($_SESSION['userid'])){
                         $uid = $_SESSION['userid'];
                     }
-                    $score = isset($_GET['score']) ? $_GET['score'] : 0;
 
                     $dbcon = mysqli_connect('localhost', 'root', '');
                     mysqli_select_db($dbcon, 'sign');
